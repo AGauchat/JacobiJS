@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <style>
+        /* Style the body */
+        body {
+            font-family: Arial;
+            margin: 0;
+            background-color: #afcac5;
+        }
+
+        /* Header/Logo Title */
+        .header {
+            padding: 0.1px;
+            text-align: center;
+            background: #1abc9c;
+            color: white;
+            font-size: 20px;
+        }
+
+        .colorTitulos{
+            color: #117e68;
+        }
+
+        /* Page Content */
+        .content {
+            padding:10px;
+            text-align: center;
+        }
+
+        .input {
+            width: 50px;
+        }
+    </style>
+
+    <head>
+        <title>Jacobi</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Metodo Jacobi</h1>
+        </div>
+
+        <div class="content" id="content">
+            <h1 id="tituloPrincipal" class="colorTitulos">Completa los datos</h1>
+            
+            <div>
+                <label>Orden de la matriz: </label> 
+                <input class="input" type="number" id="orden" />
+                <button onclick="drawMatriz($('#orden').val())">Siguiente</button>
+            </div>
+            
+            <div id="sistema"></div>
+
+            <div id="dIteraciones" style="display: none;">
+                <h3 class="colorTitulos">Matriz no dominante!</h3>
+                <label>Nº iteraciones: </label> 
+                <input class="input" type="number" id="iteraciones" />
+                <button onclick="calcularIteraciones($('#orden').val())">Siguiente</button>
+            </div>
+
+            <table style="width:100%" id="tabla" class="table "></table>
+        </div>
+
+    </body>
+</html>
+
+<script src="drawMatriz.js"></script>
+
+<script src="calcular.js"></script>
+
+<script src="dominante.js"></script>
